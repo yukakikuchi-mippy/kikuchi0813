@@ -67,7 +67,7 @@ const app = new Vue({
 
       try {
         // CheckSession APIを呼び出してセッションの状態を確認
-        const response = await axios.post('※ここにCheckSessionのURLを記載※', {
+        const response = await axios.post('https://m3h-yukakikuchi-functionapiapp0730.azurewebsites.net/api/CheckSession?', {
           SessionId: sessionId
         });
 
