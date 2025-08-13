@@ -1,7 +1,7 @@
 const app = new Vue({
-  el: '#app',
+  el: '#app', // Vueが管理する一番外側のDOM要素
   vuetify: new Vuetify(),
-      data: {
+  data: {
     // Vue内部で使いたい変数は全てこの中に定義する
     ID: '', //パラメーター「ID」格納変数
     Name: '', //パラメーター「Name」格納変数
@@ -9,7 +9,7 @@ const app = new Vue({
     snackbar: false, // スナックバー表示フラグ（成功通知用）
     snackbarMessage: '', // スナックバーに表示するメッセージ
     dialog: false, // ダイアログ表示フラグ（セッション切れ通知用）
-    dialogMessage: '' // ダイアログに表示するメッセージ 
+    dialogMessage: '' // ダイアログに表示するメッセージ
   },
   methods: {
     // DBにデータを追加する関数
@@ -32,8 +32,8 @@ const app = new Vue({
       
       //結果をコンソールに出力
       console.log(response.data);
-
     },
+
     // データベースからデータを取得する関数
     readData: async function() {
       //SELECT用のAPIを呼び出し      
@@ -45,7 +45,8 @@ const app = new Vue({
       //結果リストを表示用配列に代入
       this.dataList = response.data.List;
     },
-        // Cookieから指定された名前の値を取得する関数
+
+    // Cookieから指定された名前の値を取得する関数
     getCookie: function(name) {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
